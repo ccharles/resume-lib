@@ -1,0 +1,18 @@
+\setuppapersize[letter][letter]
+
+\setuplayout[backspace=1in,topspace=1in,width=6.5in,height=9in,
+    margin=2.5em,header=0in,footer=0in]
+
+\usetypescript[palatino][ec]
+
+\setupbodyfont[palatino,11pt]
+
+\setupwhitespace[big]
+
+\define[3]\Signature{
+    Sincerely,\crlf
+    \blank[big]
+    \externalfigure[signature.png][height=1cm]
+    #1 \crlf
+    {\tfx \goto{#2}[url(mailto:#2)]} \crlf
+    {\tfx #3}}

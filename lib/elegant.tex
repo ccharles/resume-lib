@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    Filename: elegant.tex
+%      Author: Chris Charles
+%
+% ---------------------------------------------------------------------------
+%
+%    Resume style file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setuppapersize[letter][letter]
+
+\setuplayout[backspace=0.5in,topspace=0.5in,width=7.5in,height=10in,
+    margin=2.5em,header=0in,footer=0.5in]
+
+\setupinteraction[state=start,style=\rm]
+
+\usetypescript[palatino][ec]
+
+\setupbodyfont[palatino,11pt]
+
+\setupwhitespace[medium]
+
+\setupnarrower[left=1.5em,right=1.5em]
+
+\setupitemgroup[itemize][1][packed][margin=1.5em]
+
+\define[4]\ContactInfo{
+    \setupfootertexts[\tfx#1\wordright{{\pagenumber} of {\totalnumberofpages}}]
+    {\bfb #1} \wordright{\tfx #2\doifnotempty{#3}{\doifnotempty{#2}{\space\cdot\space}#3}\doifnotempty{#4}{\doifnotempty{#2#3}{\space\cdot\space}\bf{\goto{#4}[url(mailto:#4)]} \blank[3*medium]}}}
+
+\define[1]\StartSection{
+    \page[preference] \hairline \page[no] {\bf\WORD{#1}} \startnarrower[left]}
+
+\define[0]\StopSection{
+    \stopnarrower}
+
+\define[2]\StartOrganization{
+    \blank[big] {\bf{\em #1 \wordright{#2}}} \blank[medium]
+    \startnarrower[left]}
+
+\define[0]\StopOrganization{\stopnarrower}
+
+\define[3]\Position{{\em #1 \wordright{#2\doifnotempty{#3}{--#3}}}}
+
+\define[0]\StartResponsibilities{\startnarrower[left,right] \blank[medium]}
+
+\define[0]\StopResponsibilities{\stopnarrower \blank[medium]}
+
+\define[4]\Reference{
+    \blank[medium]
+    {\tfx {\em {\bf Reference:} #1, #2 \wordright{#3\doifnotempty{#4}{\doifnotempty{#3}{,} \goto{#4}[url(mailto:#4)]}}} \blank[big]}}
+
+\endinput

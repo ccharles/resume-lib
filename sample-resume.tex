@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    Filename: sample-resume.tex
+%      Author: Chris Charles
+%
+% ---------------------------------------------------------------------------
+%
+%    A sample resume using my resume library.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% This is required. Trust me, leave it in!
+\starttext
+
+
+
+%% Your contact information. This sets up the contact information block at
+%% the top of the page, as well as the footer text.
+\ContactInfo{Robert Terwilliger} %% Name
+    {Springfield Penitentiary, Springfield, USA} %% Address
+    {555-555-5555} %% Phone number. I like to use \bf{} to make it stand out.
+    {robert@diebartdie.com} %% Email address. This will be hyperlinked.
+
+
+
+%% Each main part of your resume is a section, beginning
+%% with \StartSetion{Section Name} and ending at the matching \StopSection.
+\StartSection{Highlights}
+
+
+%% ConTeXt supports many of the constructs that you may have used in
+%% LaTeX. Here we're using an unordered list.
+\startitemize
+
+\item Excellent narrating and singing voice
+
+\item Dedicated and hard-working
+
+\item Great hair
+
+\stopitemize  %% Many opening tags have matching closing tags
+
+\StopSection %% The Highlights section
+
+
+
+\StartSection{Selected professional experience}
+
+
+%% We normally want more than just an unordered list for item details. Use
+%% the \StartOrganization{Organization Name}{Organization location}
+%% and \StopOrganization tags to build a detailed sub-section.
+\StartOrganization{Municipal government}{Salsiccia, Italy}
+
+%% The \Position{Name}{Start}{End} tag lists a position within an
+%% organization. Multiple \Position tags can exist within an Organization,
+%% with or without a Responsibilities section.
+\Position{Mayor}{2002}{2005}
+
+
+%% Use \StartResponsibilities and \StopResponsibilities to describe the
+%% position. You can use a list instead of paragraphs as appropriate.
+\StartResponsibilities
+
+Made wine, wrote budgets, corrected enunciation, organized parades and
+feasts, acted in {\it Pagliacci}. Lived a relatively quiet life free of
+attempted murder.
+
+\StopResponsibilities
+
+
+\StopOrganization
+
+
+
+\StartOrganization{The Krusty the Klown Show}{Springfield}
+
+\Position{Sideshow Bob}{1987}{1990}
+
+\StartResponsibilities
+
+Acted as Krusty's punching bag, cannon ball, pie target and many other humiliating activites over a period of several years. Helped to raise the ratings of the Krusty the Klown show by framing Krusty for armed robbery.
+
+\StopResponsibilities
+
+
+%% I've always disliked putting references apart from the position they're
+%% acting as reference for. The \Reference{Name}{Title}{Phone}{Email} tag
+%% will add an optional reference to this Organization / Position.
+\Reference{Herschel Krustofski}{Klown}
+    {555-555-5555}{krusty@wahahahahaha.com}
+
+\StopOrganization
+
+
+
+\StopSection  %% Professional experience
+
+
+%% I usually model my Education section the same way as my Experience
+%% section. The Organization and Position sections translate quite well.
+\StartSection{Education}
+
+\StartOrganization{Yale University}{New Haven, Connecticut}
+
+
+%% The ending date can be left off if desired
+\Position{B.A. in Philosophy}{June, 1975}{}
+
+\StopOrganization
+
+\StopSection
+
+
+%% This is also required
+\stoptext
